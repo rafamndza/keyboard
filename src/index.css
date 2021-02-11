@@ -187,4 +187,46 @@ body {
           }
         }
       }
+    }
+  /* Utility Classes */
+  & .hole {
+    display: flex;
+    background: #6d6d6d;
+    border-radius: 5px;
+    margin: 4px;
+
+    &.wrap {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  & .key {
+    width: var(--width, 32px);
+    height: var(--height, 32px);
+    background: #fff;
+    background: radial-gradient(circle at 65% 40%, #999, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+
+    &.pressed {
+      transform: translateY(2px);
+
+      &::before {
+        box-shadow: 0 0 4px #fff;
+        background: #ddd;
+      }
+    }
+
+    & .special {
+      display: block;
+      position: absolute;
+      color: #444;
+      font-size: 8px;
+      transform: translate(-6px, -6px);
     }  
