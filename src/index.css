@@ -229,4 +229,59 @@ body {
       color: #444;
       font-size: 8px;
       transform: translate(-6px, -6px);
+    }
+    &::before {
+        background: linear-gradient(140deg, #e8e8e8, #fbfbfb);
+        box-shadow: 0 0 2px 2px #fff;
+        border-radius: 3px;
+        transform: translateY(-2px);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+  
+        /* Default values */
+        content: attr(data-key);
+        width: calc(var(--width, 32px) - 6px);
+        height: calc(var(--height, 32px) - 8px);
+      }
+  
+      &::before,
+      &::after {
+        color: #555;
+        text-transform: capitalize;
+        font-family: var(--font-family);
+        font-weight: bold;
+        font-size: 9px;
+      }
+    }
+  
+    & .normal-key {
+      &::before {
+        content: attr(data-special-key);
+        width: calc(var(--width, 32px) - 6px);
+        height: calc(var(--height, 32px) - 8px);
+        font-size: 8px;
+      }
+  
+      &::after {
+        content: attr(data-key);
+        position: absolute;
+        font-size: 9px;
+      }
+    }
+  
+    & .slash-key {
+      --width: 40px;
+      --height: 32px;
+  
+      &::before {
+        content: attr(data-special-key);
+        width: calc(var(--width, 32px) - 6px);
+        height: calc(var(--height, 32px) - 8px);
+      }
+  
+      &::after {
+        content: attr(data-key);
+        position: absolute;
+      }
     }  
